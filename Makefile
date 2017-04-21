@@ -1,6 +1,7 @@
 .POSIX:
 
 CC=musl-gcc
+AR=ar
 CFLAGS+=-D_GNU_SOURCE -D_BSD_SOURCE -DRPC_LOG_TO_STDOUT_ONLY -D_XOPEN_SOURCE=600 -I. -I./rpc -DRPC_OFFSET=0 -fno-stack-protector
 OBJS=clnt.o ops.o rpc.o svc_clnt_common.o svc.o xdr.o 		\
 	pmap_prot.o pmap_prot2.o
@@ -29,7 +30,7 @@ inst-sh: libdrpc.so
 	cp -P libdrpc.so* ${DESTDIR}${SYSLIBDIR}/
 	
 libdrpc.a: ${OBJS}
-	ar rc  $@ ${OBJS}
+	${AR} rc  $@ ${OBJS}
 	
 .c.o:
 	${CC} ${CFLAGS} -c $<
