@@ -3,15 +3,12 @@
  * No change in copyright status claimed. */
 
 
-#include <hardware_legacy/power.h>
-#define ANDROID_WAKE_LOCK_NAME "rpc-interface"
-
 void
 grabPartialWakeLock() {
-    acquire_wake_lock(PARTIAL_WAKE_LOCK, ANDROID_WAKE_LOCK_NAME);
+    // Do nothing.
 }
 
 void
 releaseWakeLock() {
-    release_wake_lock(ANDROID_WAKE_LOCK_NAME);
+    // Do nothing.
 }

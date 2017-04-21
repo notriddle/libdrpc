@@ -4,9 +4,9 @@ CC=musl-gcc
 AR=ar
 CFLAGS+=-D_GNU_SOURCE -D_BSD_SOURCE -DRPC_LOG_TO_STDOUT_ONLY -D_XOPEN_SOURCE=600 -I. -I./rpc -DRPC_OFFSET=0 -fno-stack-protector
 OBJS=clnt.o ops.o rpc.o svc_clnt_common.o svc.o xdr.o 		\
-	pmap_prot.o pmap_prot2.o
+	pmap_prot.o pmap_prot2.o partwake.o
 SOOBJS=clnt.lo ops.lo rpc.lo svc_clnt_common.lo svc.lo xdr.lo 	\
-	pmap_prot.lo pmap_prot2.lo
+	pmap_prot.lo pmap_prot2.lo partwake.lo
 PREFIX?=/usr/local
 INCDIR?=${PREFIX}/include/drpc
 LIBDIR?=${PREFIX}/lib
